@@ -45,14 +45,14 @@ public class TwoSum1 {
 				temList.add(list.get(start));
 				temList.add(list.get(end));
 				lists.add(temList);
-				// 移动头尾指针，去重
+				// 移动头尾指针
 				start++;
-				while(list.get(start) == list.get(start - 1)) {
+				while(list.get(start) == list.get(start - 1) && (start < length - 1)) {// 去重
 					start++;
 				}
 				
 				end--;
-				while(list.get(end) == list.get(end + 1)) {
+				while(list.get(end) == list.get(end + 1) && (end > 0)) {// 去重
 					end--;
 				}
 			} else if(list.get(start) + list.get(end) < target) {// 比目标值小，移动头指针
@@ -96,13 +96,16 @@ public class TwoSum1 {
 				map.put(nums[i], value + 1);
 			}
 		}
+		
+		// 结果去重
 		return lists;
 	}
 	
 	public static void main(String[] args) {
 		int[] ints = new int[]{-3, -2, -2, -1, 0, 0, 0, 2, 3};
+		//int[] ints = new int[]{-3,-3,3,3,3};
 		TwoSum1 twoSum = new TwoSum1();
 		System.out.println(twoSum.twoSum1(ints, 0));
-		System.out.println(twoSum.twoSum2(ints, 0));
+		//System.out.println(twoSum.twoSum2(ints, 0));
 	}
 }

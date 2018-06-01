@@ -40,14 +40,14 @@ public class MinimumWindowSubstring76 {
 					}
 				}
 				
-				System.out.println("inner: " + s.substring(pStart, pEnd + 1));
+				//System.out.println("inner: " + s.substring(pStart, pEnd + 1));
 				
 				// 如果有更小的窗口，更新窗口位置
 				if((pEnd - pStart + 1) < windowSize) {
 					start = pStart;
 					end = pEnd;
 					windowSize = pEnd - pStart + 1;
-					System.out.println(windowSize);
+					//System.out.println(windowSize);
 				}
 			} 
 		}
